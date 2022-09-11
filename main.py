@@ -1,3 +1,4 @@
+from flask import Flask
 import speech_recognition as sr
 import sounddevice
 from playsound import playsound
@@ -21,3 +22,11 @@ def read_mic():
 
 while True:
     read_mic()
+
+app = Flask(__name__)
+
+@app.route('/')
+def root():
+    return 'Olá Mundo! Me abençoe'
+
+app.run()
