@@ -1,6 +1,7 @@
 import speech_recognition as sr
 import sounddevice
 from playsound import playsound
+import Speaker
 
 def read_mic():
     mic = sr.Recognizer()
@@ -12,12 +13,11 @@ def read_mic():
 
         audio = mic.listen(source)
 
-        sentence = mic.recognize_google(audio, language='pt-BR')
+        sentence = mic.recognize_google(audio, language='pt-br')
 
         print(sentence)
 
-        # if "acelera" in sentence:
-        #     playsound("/home/vitindafixa/Downloads/lambo.mp3")
+        Speaker.speak(sentence)
 
 while True:
     read_mic()
