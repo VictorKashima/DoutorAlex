@@ -2,7 +2,7 @@ from flask import Flask
 import speech_recognition as sr
 import sounddevice
 from playsound import playsound
-import Speaker
+import Speaker 
 
 def read_mic():
     mic = sr.Recognizer()
@@ -23,10 +23,10 @@ def read_mic():
 while True:
     read_mic()
 
-app = Flask(__name__)
+# app = Flask(__name__)
 
-@app.route('/')
-def root():
-    return 'Olá Mundo! Me abençoe'
+# @app.route('/')
+# def root():
+#     return 'Olá Mundo! Me abençoe'
 
-app.run()
+# app.run()
